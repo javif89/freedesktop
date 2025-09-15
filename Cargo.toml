@@ -1,0 +1,11 @@
+[workspace]
+members = ["freedesktop-apps", "freedesktop-cli", "freedesktop-core"]
+resolver = "2"
+
+[workspace.package]
+version = "0.1.0"
+authors = ["Javier Feliz <me@javierfeliz.com>"]
+edition = "2024"
+rust-version = "1.89"
+license = "MIT"
+description = "Rust implementations of the freedesktop standards"
