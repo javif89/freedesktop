@@ -1,0 +1,41 @@
+[Desktop Entry]
+Type=Application
+Version=1.5
+Name=Complete Test Application
+Name[en_US]=Complete Test Application (US)
+Name[es]=Aplicación de Prueba Completa
+Name[fr]=Application de Test Complète
+GenericName=Test App
+GenericName[es]=App de Prueba
+Comment=A comprehensive test application demonstrating all features
+Comment[es]=Una aplicación de prueba que demuestra todas las características
+Icon=test-complete-app
+TryExec=/usr/bin/test-app
+Exec=test-app --mode=%f %F
+Path=/tmp/test-workspace
+Terminal=false
+StartupNotify=true
+StartupWMClass=TestApp
+MimeType=text/plain;application/x-test;image/test;
+Categories=Development;Utility;Education;
+Keywords=test;demo;example;complete;
+Keywords[es]=prueba;demostración;ejemplo;completo;
+Actions=new-window;preferences;
+OnlyShowIn=GNOME;KDE;
+Hidden=false
+NoDisplay=false
+DBusActivatable=false
+PrefersNonDefaultGPU=false
+SingleMainWindow=false
+
+[Desktop Action new-window]
+Name=New Window
+Name[es]=Nueva Ventana
+Icon=window-new
+Exec=test-app --new-window
+
+[Desktop Action preferences]
+Name=Preferences
+Name[es]=Preferencias
+Icon=preferences-system
+Exec=test-app --preferences

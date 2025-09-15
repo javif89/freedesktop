@@ -1,0 +1,26 @@
+[Desktop Entry]
+Type=Application
+Name=Localization Test
+Name[en]=English Name
+Name[en_US]=American English Name
+Name[en_GB]=British English Name
+Name[es]=Nombre en Español
+Name[es_ES]=Nombre en España
+Name[es_MX]=Nombre en México
+Name[fr]=Nom Français
+Name[fr_FR]=Nom France
+Name[fr_CA]=Nom Canada
+Name[de]=Deutscher Name
+Name[de_DE]=Deutscher Name Deutschland
+Name[zh_CN]=中文名称
+Name[zh_TW]=中文名稱
+Comment=Base comment
+Comment[en]=English comment
+Comment[es]=Comentario en español
+Comment[fr]=Commentaire français
+Comment[de]=Deutscher Kommentar
+Exec=localization-test
+Icon=test-localization
+Keywords=test;localization;
+Keywords[es]=prueba;localización;
+Keywords[fr]=test;localisation;

@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=D-Bus Activatable App
+DBusActivatable=true
+# Note: Exec not required when DBusActivatable=true, but included for compatibility
+Exec=org.example.DBusApp

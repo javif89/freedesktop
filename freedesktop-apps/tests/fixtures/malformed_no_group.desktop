@@ -1,0 +1,4 @@
+# This file has no groups - should fail
+Name=Invalid App
+Type=Application
+Exec=invalid-app

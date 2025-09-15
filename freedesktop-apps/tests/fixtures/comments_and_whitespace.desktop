@@ -1,0 +1,21 @@
+# This is a comment at the top
+# Testing comments and whitespace handling
+
+[Desktop Entry]
+# Comment in group
+Type=Application
+
+# Empty line above and below
+
+Name=Comments Test App
+# Another comment
+Exec=comments-test
+
+# Trailing spaces and tabs on next line
+Comment=Testing whitespace    	
+Icon=test-icon    # Inline comment should be ignored
+
+# Multiple empty lines below
+
+
+# End comment

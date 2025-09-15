@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Link
+Name=Test Website Link
+Name[es]=Enlace del Sitio Web de Prueba
+Comment=A test link to example.com
+Icon=web-browser
+URL=https://example.com

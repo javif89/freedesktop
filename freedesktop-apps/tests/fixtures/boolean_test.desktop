@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=Boolean Test App
+Exec=bool-test
+Terminal=true
+Hidden=false
+NoDisplay=true
+StartupNotify=false
+DBusActivatable=true
+PrefersNonDefaultGPU=true
+SingleMainWindow=false

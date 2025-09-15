@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Escape Test App
+Comment=Testing escape sequences:\snewline:\nTab:\tCarriage return:\rBackslash:\\
+Exec=test-app --option="value with\sspaces" --file="\$HOME/test\nfile.txt"
+Categories=Test\;Category;Another;
+Keywords=escape\;test;sequences;special\schars;

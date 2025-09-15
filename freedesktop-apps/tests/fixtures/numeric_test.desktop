@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Numeric Test App
+Exec=numeric-test
+X-Test-Integer=42
+X-Test-Float=3.14159
+X-Test-Negative=-123.45
+X-Test-Scientific=1.23e-4

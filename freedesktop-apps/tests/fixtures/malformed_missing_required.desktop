@@ -1,0 +1,3 @@
+[Desktop Entry]
+# Missing Type and Name - should fail validation
+Exec=bad-app
