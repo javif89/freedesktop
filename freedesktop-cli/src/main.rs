@@ -5,7 +5,7 @@ fn main() {
         if let Some(name) = app.name()
             && app.should_show()
         {
-            println!("{}", name);
+            println!("{}: {}", app.id().unwrap(), name);
         }
     }
 }

@@ -33,16 +33,26 @@ impl ApplicationEntry {
         self.get_string("Name")
     }
 
+    /// Get the desktop file ID according to the freedesktop specification
+    /// 
+    /// The desktop file ID is computed by making the file path relative to the
+    /// XDG_DATA_DIRS component, removing "applications/" prefix, and converting
+    /// '/' to '-'. For example: /usr/share/applications/foo/bar.desktop → foo-bar.desktop
     pub fn id(&self) -> Option<String> {
-        if let Some(file_name) = self.path().file_name() {
-            let id = PathBuf::from(file_name)
-                .with_extension("")
-                .to_string_lossy()
-                .to_string();
-            return Some(id);
+        let file_path = &self.inner.path;
+        
+        // Check if this file is within any applications directory
+        if let Some(apps_pos) = file_path.to_string_lossy().find("/applications/") {
+            let after_apps = &file_path.to_string_lossy()[apps_pos + "/applications/".len()..];
+            if let Some(desktop_entry_path) = after_apps.strip_suffix(".desktop") {
+                // Convert path separators to dashes for subdirectories
+                return Some(desktop_entry_path.replace('/', "-"));
+            }
         }
-
-        None
+        
+        // Fallback: just use filename without extension
+        file_path.file_stem()
+            .map(|name| name.to_string_lossy().to_string())
     }
 
     /// Get the executable command
