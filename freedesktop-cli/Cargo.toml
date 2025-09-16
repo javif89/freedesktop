@@ -8,4 +8,4 @@ license.workspace = true
 description.workspace = true
 
 [dependencies]
-freedesktop-apps = { version = "0.0.1", path = "../freedesktop-apps" }
+freedesktop-apps = { path = "../freedesktop-apps" }

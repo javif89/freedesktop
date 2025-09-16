@@ -46,7 +46,7 @@ dependencies = [
 
 [[package]]
 name = "freedesktop"
-version = "0.0.1"
+version = "0.0.2"
 dependencies = [
  "freedesktop-apps",
  "freedesktop-core",
@@ -54,7 +54,7 @@ dependencies = [
 
 [[package]]
 name = "freedesktop-apps"
-version = "0.0.1"
+version = "0.0.2"
 dependencies = [
  "freedesktop-core",
  "libc",
@@ -63,14 +63,14 @@ dependencies = [
 
 [[package]]
 name = "freedesktop-cli"
-version = "0.0.1"
+version = "0.0.2"
 dependencies = [
  "freedesktop-apps",
 ]
 
 [[package]]
 name = "freedesktop-core"
-version = "0.0.1"
+version = "0.0.2"
 dependencies = [
  "dirs",
 ]

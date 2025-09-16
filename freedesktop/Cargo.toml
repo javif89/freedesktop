@@ -15,12 +15,12 @@ categories.workspace = true
 default = ["core", "apps"]
 core = ["dep:freedesktop-core"]
 apps = ["core", "dep:freedesktop-apps"]
-cli = ["apps"]  # For potential future CLI utilities
+cli = ["apps"]                          # For potential future CLI utilities
 
 [dependencies]
 # Optional dependencies enabled by features
-freedesktop-core = { path = "../freedesktop-core", version = "0.0.1", optional = true }
-freedesktop-apps = { path = "../freedesktop-apps", version = "0.0.1", optional = true }
+freedesktop-core = { path = "../freedesktop-core", version = "0.0.2", optional = true }
+freedesktop-apps = { path = "../freedesktop-apps", version = "0.0.2", optional = true }
 
 [dev-dependencies]
 # For testing different feature combinations
