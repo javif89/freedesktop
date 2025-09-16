@@ -16,11 +16,14 @@ pub enum ParseError {
 #[derive(Debug, Clone, PartialEq)]
 pub enum ValueType {
     String(String),
+    #[allow(dead_code)] // Reserved for future localization features
     LocaleString(String),
+    #[allow(dead_code)] // Reserved for future icon handling
     IconString(String),
     Boolean(bool),
     Numeric(f64),
     StringList(Vec<String>),
+    #[allow(dead_code)] // Reserved for future localization features
     LocaleStringList(Vec<String>),
 }
 
@@ -53,6 +56,7 @@ impl LocalizedKey {
 
 #[derive(Debug, Default)]
 pub struct DesktopEntryGroup {
+    #[allow(dead_code)] // Reserved for future group name tracking
     pub name: String,
     pub fields: HashMap<String, ValueType>,
     pub localized_fields: HashMap<String, HashMap<String, ValueType>>,
@@ -73,7 +77,7 @@ impl DesktopEntryGroup {
         if let Some(locale) = localized_key.locale {
             self.localized_fields
                 .entry(localized_key.key)
-                .or_insert_with(HashMap::new)
+                .or_default()
                 .insert(locale, value);
         } else {
             self.fields.insert(localized_key.key, value);
@@ -189,8 +193,10 @@ impl DesktopEntry {
             .map_err(|e| ParseError::InvalidFormat(format!("Regex error: {}", e)))?;
 
         let mut current_group: Option<String> = None;
-        let mut entry = DesktopEntry::default();
-        entry.path = path.as_ref().to_path_buf();
+        let mut entry = DesktopEntry { 
+            path: path.as_ref().to_path_buf(), 
+            ..Default::default() 
+        };
         
         for (line_num, line) in reader.lines().enumerate() {
             let line = line.map_err(|e| ParseError::IoError(format!("Failed to read line {}: {}", line_num + 1, e)))?;

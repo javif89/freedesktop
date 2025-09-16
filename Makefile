@@ -18,6 +18,9 @@ lint:
 lint-fix:
 	cargo clippy --fix
 
+test:
+	cargo test
+
 # Development targets
 check:
 	@echo "🔍 Checking all crates..."

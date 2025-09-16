@@ -24,17 +24,11 @@ pub fn application_entry_paths() -> Vec<PathBuf> {
 }
 
 #[derive(Debug)]
+#[derive(Default)]
 pub struct ApplicationEntry {
     inner: DesktopEntry,
 }
 
-impl Default for ApplicationEntry {
-    fn default() -> Self {
-        Self {
-            inner: DesktopEntry::default(),
-        }
-    }
-}
 
 impl ApplicationEntry {
     /// Get the application name
