@@ -10,6 +10,6 @@ repository.workspace = true
 homepage.workspace = true
 
 [dependencies]
-freedesktop-core = { path = "../freedesktop-core", version = "0.1.0" }
+freedesktop-core = { path = "../freedesktop-core", version = "0.0.1" }
 regex = "1.11.2"
 libc = "0.2"

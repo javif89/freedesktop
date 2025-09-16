@@ -27,14 +27,15 @@ clean:
 
 # Dry run - test publishing without actually doing it
 publish-dry-run:
-	@echo "🔍 Dry run publishing all crates in order..."
-	@echo "📦 1/3 Dry run: freedesktop-core"
+	@echo "🔍 Dry run publishing individual crates..."
+	@echo "📦 Testing freedesktop-core (should succeed)"
 	cargo publish --dry-run -p freedesktop-core
-	@echo "📦 2/3 Dry run: freedesktop-apps"
-	cargo publish --dry-run -p freedesktop-apps
-	@echo "📦 3/3 Dry run: freedesktop (umbrella)"
-	cargo publish --dry-run -p freedesktop
-	@echo "✅ All dry runs completed successfully!"
+	@echo ""
+	@echo "⚠️  Note: Cannot dry-run dependent crates until dependencies are published"
+	@echo "   freedesktop-apps and freedesktop will fail until freedesktop-core is published"
+	@echo ""
+	@echo "✅ freedesktop-core dry run completed!"
+	@echo "📋 Ready to publish! Run 'make publish' when ready."
 
 # Publish all crates in correct dependency order
 publish: check test

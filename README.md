@@ -11,7 +11,7 @@ Add to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-freedesktop = "0.1.0"
+freedesktop = "0.0.1"
 ```
 
 ### XDG Base Directories
@@ -56,7 +56,7 @@ This crate provides optional features for different functionality:
 
 ```toml
 # Default features (core + apps)
-freedesktop = "0.1.0"
+freedesktop = "0.0.1"
 
 # Only XDG base directories
 freedesktop = { version = "0.1.0", default-features = false, features = ["core"] }
