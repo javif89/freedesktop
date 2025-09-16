@@ -1,0 +1,26 @@
+[package]
+name = "freedesktop"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+description = "Rust implementations of the freedesktop.org specifications for Linux desktop integration"
+repository.workspace = true
+homepage.workspace = true
+keywords.workspace = true
+categories.workspace = true
+
+[features]
+default = ["core", "apps"]
+core = ["dep:freedesktop-core"]
+apps = ["core", "dep:freedesktop-apps"]
+cli = ["apps"]  # For potential future CLI utilities
+
+[dependencies]
+# Optional dependencies enabled by features
+freedesktop-core = { version = "0.1.0", optional = true }
+freedesktop-apps = { version = "0.1.0", optional = true }
+
+[dev-dependencies]
+# For testing different feature combinations

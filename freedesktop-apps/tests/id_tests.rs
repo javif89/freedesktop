@@ -42,9 +42,9 @@ Exec=test-app"#;
     let simple_entry = ApplicationEntry::try_from_path(&simple_file).unwrap();
     let nested_entry = ApplicationEntry::try_from_path(&nested_file).unwrap();
     
-    // For files outside XDG dirs, falls back to filename
+    // For files in applications dirs, should use spec-compliant IDs
     assert_eq!(simple_entry.id(), Some("simple".to_string()));
-    assert_eq!(nested_entry.id(), Some("bar".to_string()));
+    assert_eq!(nested_entry.id(), Some("foo-bar".to_string())); // subdirectory becomes part of ID
     
     // Clean up
     fs::remove_dir_all(temp_dir).ok();
@@ -73,8 +73,8 @@ Exec=foo-viewer"#;
     
     let entry = ApplicationEntry::try_from_path(&desktop_file).unwrap();
     
-    // Without XDG dir recognition, falls back to filename
-    assert_eq!(entry.id(), Some("FooViewer".to_string()));
+    // In applications directory, should generate spec-compliant ID
+    assert_eq!(entry.id(), Some("org-example-FooViewer".to_string()));
     
     // Clean up
     fs::remove_dir_all(temp_base).ok();

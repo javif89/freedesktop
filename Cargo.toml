@@ -1,11 +1,20 @@
 [workspace]
-members = ["freedesktop-apps", "freedesktop-cli", "freedesktop-core"]
+members = [
+    "freedesktop",
+    "freedesktop-apps",
+    "freedesktop-cli",
+    "freedesktop-core",
+]
 resolver = "2"
 
 [workspace.package]
 version = "0.1.0"
 authors = ["Javier Feliz <me@javierfeliz.com>"]
-edition = "2024"
+edition = "2021"
 rust-version = "1.89"
 license = "MIT"
 description = "Rust implementations of the freedesktop standards"
+repository = "https://github.com/javif89/freedesktop"
+homepage = "https://github.com/javif89/freedesktop"
+keywords = ["freedesktop", "xdg", "desktop", "linux"]
+categories = ["os::unix-apis", "command-line-utilities"]

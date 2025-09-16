@@ -45,6 +45,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "freedesktop"
+version = "0.1.0"
+dependencies = [
+ "freedesktop-apps",
+ "freedesktop-core",
+]
+
+[[package]]
 name = "freedesktop-apps"
 version = "0.1.0"
 dependencies = [
