@@ -10,3 +10,4 @@ description.workspace = true
 [dependencies]
 freedesktop-core = { version = "0.1.0", path = "../freedesktop-core" }
 regex = "1.11.2"
+libc = "0.2"
