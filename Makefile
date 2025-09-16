@@ -12,6 +12,12 @@ help:
 	@echo ""
 	@echo "For first-time publishing, run: make publish"
 
+lint:
+	cargo clippy
+
+lint-fix:
+	cargo clippy --fix
+
 # Development targets
 check:
 	@echo "🔍 Checking all crates..."
