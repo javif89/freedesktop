@@ -151,6 +151,19 @@ impl IconTheme {
         // Pixmaps are a last resort
         Pixmap::get(icon_name)
     }
+
+    /// Get an icon by name following the freedesktop icon theme specification
+    /// Searches through the current theme and inherited themes for the icon
+    pub fn get_with_size(&self, icon_name: &str, size: u32) -> Option<PathBuf> {
+        let scale: u8 = 1;
+
+        if let Some(path) = &self.get_through_inheritance(icon_name, size, scale) {
+            return Some(path.to_owned());
+        }
+
+        // Pixmaps are a last resort
+        Pixmap::get(icon_name)
+    }
 }
 
 impl IconTheme {
@@ -275,4 +288,15 @@ impl Pixmap {
 /// a performance penalty
 pub fn get_icon(name: &str) -> Option<PathBuf> {
     CURRENT_ICON_THEME.get(name)
+}
+
+/// Convenience function that will:
+/// Get the current icon theme from IconTheme::current()
+/// Call theme.get_with_size() which will get the icon for
+/// the the supplied size and default scale.
+/// IconTheme::current() will be cached using LazyLock
+/// so multiple calls to this function do not incurr
+/// a performance penalty
+pub fn get_icon_with_size(name: &str, size: u32) -> Option<PathBuf> {
+    CURRENT_ICON_THEME.get_with_size(name, size)
 }
