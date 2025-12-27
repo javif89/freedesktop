@@ -27,6 +27,15 @@ pub fn base_directories() -> Vec<PathBuf> {
     dirs
 }
 
+pub fn xdg_cache_home() -> PathBuf {
+    let Ok(dir) = std::env::var("XDG_CACHE_HOME") else {
+        let home = std::env::var("HOME").expect("CRITICAL: $HOME variable not set or available");
+        return PathBuf::from(home).join(".cache");
+    };
+
+    PathBuf::from(dir)
+}
+
 pub fn xdg_config_home() -> PathBuf {
     let Ok(dir) = std::env::var("XDG_CONFIG_HOME") else {
         let home = std::env::var("HOME").expect("CRITICAL: $HOME variable not set or available");
@@ -44,6 +53,15 @@ pub fn xdg_data_home() -> PathBuf {
                 .expect("$HOME environment variable not set. This is a critical failure");
             PathBuf::from(home).join(".local/share")
         })
+}
+
+pub fn xdg_state_home() -> PathBuf {
+    let Ok(dir) = std::env::var("XDG_STATE_HOME") else {
+        let home = std::env::var("HOME").expect("CRITICAL: $HOME variable not set or available");
+        return PathBuf::from(home).join(".local/state");
+    };
+
+    PathBuf::from(dir)
 }
 
 pub fn xdg_data_dirs() -> Vec<PathBuf> {
